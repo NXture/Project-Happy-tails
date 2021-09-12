@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { UserContext } from '@lib/context';
-import { auth } from '@lib/firebase';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useContext } from "react";
+import { UserContext } from "@lib/context";
+import { auth } from "@lib/firebase";
 
 // Top navbar
 export default function Navbar() {
@@ -10,17 +10,17 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  const signOut =  () => {
+  const signOut = () => {
     auth.signOut();
     router.reload();
-  }
+  };
 
   return (
     <nav className="navbar">
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">NXT</button>
+            <img style={{ minWidth:120, minHeight:120 }} src="/logo.svg" />
           </Link>
         </li>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href={`/${username}`}>
-                <img src={user?.photoURL || '/hacker.png'} />
+                <img style={{ maxWidth:50, maxHeight:50 }} src={user?.photoURL || "/hacker.png"} />
               </Link>
             </li>
           </>

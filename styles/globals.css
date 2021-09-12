@@ -68,7 +68,7 @@ code {
   color: var(--colors-text);
   position: fixed;
   top: 0;
-  padding: 0 10vw;
+  padding: 0% 5% ;
   font-weight: bold;
   border-bottom: 1px solid var(--color-gray);
   z-index: 99;
@@ -92,8 +92,7 @@ code {
 }
 
 .navbar li {
-  border-radius: 50%;
-  
+  border-radius: 50%; 
 }
 
 /* Buttons */
@@ -102,7 +101,7 @@ code {
   background-color: var(--color-gray);
   border: none;
   color: var(--color-text);
-  padding: 1rem 2rem;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   text-align: center;
