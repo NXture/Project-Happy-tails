@@ -1,0 +1,59 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Access } from "./Access";
+import { MenuToggle } from "./MenuToggle";
+
+const NavLinksContainer = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const LinksWrapper = styled.ul`
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  list-style: none;
+  background-color: #fff;
+  width: 60%;
+  flex-direction: column;
+  position: fixed;
+  top: 61px;
+  right: 0;
+`;
+
+const LinkItem = styled.li`
+  width: 100%;
+  padding: 0 1.1em;
+  color: #222;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+`;
+
+export function MobileLinks(props) {
+  const [isOpen, setOpen] = useState(false);
+  return (
+    <NavLinksContainer>
+      <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
+      {isOpen && (
+        <LinksWrapper>
+          <LinkItem>
+            <Link href="#">About Us</Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="#">How it Works</Link>
+          </LinkItem>
+          <Access />
+        </LinksWrapper>
+      )}
+    </NavLinksContainer>
+  );
+}
