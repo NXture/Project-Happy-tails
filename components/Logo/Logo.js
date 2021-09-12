@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import link from "next/link";
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -26,15 +27,17 @@ const LogoText = styled.h2`
 export function Logo(props) {
   return (
     <LogoWrapper>
-      <LogoImg>
-        <img src="/logo.svg" alt="logo" />
-      </LogoImg>
-      <LogoText>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span>Pawesome</span>
-          <span>Tales</span>
-        </div>
-      </LogoText>
+      <Link href="/">
+        <LogoImg>
+          <img src="/logo.svg" alt="logo" />
+        </LogoImg>
+        <LogoText>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <span>Pawesome</span>
+            <span>Tales</span>
+          </div>
+        </LogoText>
+      </Link>
     </LogoWrapper>
   );
 }
