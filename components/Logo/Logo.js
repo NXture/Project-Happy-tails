@@ -26,18 +26,20 @@ const LogoText = styled.h2`
 
 export function Logo(props) {
   return (
-    <LogoWrapper>
+    <div>
       <Link href="/">
-        <LogoImg>
-          <img src="/logo.svg" alt="logo" />
-        </LogoImg>
-        <LogoText>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span>Pawesome</span>
-            <span>Tales</span>
-          </div>
-        </LogoText>
+        <LogoWrapper>
+          <LogoImg>
+            <img src="/logo.svg" alt="logo" />
+          </LogoImg>
+          <LogoText>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span>Pawesome</span>
+              <span>Tales</span>
+            </div>
+          </LogoText>
+        </LogoWrapper>
       </Link>
-    </LogoWrapper>
+    </div>
   );
 }
