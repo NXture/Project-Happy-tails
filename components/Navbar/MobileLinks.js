@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Access } from "./Access";
-import { MenuToggle } from "./MenuToggle";
+import { Access } from "./access";
+import { MenuToggle } from "./menuToggle";
 
 const NavLinksContainer = styled.div`
   height: 100%;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Logo } from "../Logo/Logo";
 import { NavLinks } from "./Links";
-import { Access } from "./Access";
+import { Access } from "./access";
 import { useMediaQuery } from "react-responsive";
 import DeviceSize from "@components/responsive";
 import { MobileLinks } from "./MobileLinks";
