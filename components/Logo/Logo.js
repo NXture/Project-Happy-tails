@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import link from "next/link";
+import Link from "next/link";
 
 const LogoWrapper = styled.div`
   display: flex;
