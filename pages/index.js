@@ -63,15 +63,16 @@ export default function Home(props) {
       />
 
       <div className="card card-info">
-        <h2>💡 Next.js + Firebase - The Full Course</h2>
+        <h1>🐶 Hi!</h1>
+        <p>Welcome! This app is built with Next.js and Firebase.</p>
         <p>
-          Welcome! This app is built with Next.js and Firebase and is loosely
-          inspired by Dev.to.
-        </p>
-        <p>
-          Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content
-          created by other users. All public content is server-rendered and
-          search-engine optimized.
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum."
         </p>
       </div>
 
