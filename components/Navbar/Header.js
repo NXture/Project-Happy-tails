@@ -8,7 +8,7 @@ import DeviceSize from "@components/responsive";
 import { MobileLinks } from "./MobileLinks";
 
 const NavBarContainer = styled.div`
-background-color: #fff;
+  background-color: #fff;
   position: absolute;
   top: 0%;
   width: 100%;

@@ -5,6 +5,9 @@ import Link from "next/link";
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const LogoImg = styled.div`

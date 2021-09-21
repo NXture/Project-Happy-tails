@@ -10,6 +10,7 @@ const NavLinksContainer = styled.div`
 `;
 
 const LinksWrapper = styled.ul`
+  z-index: 4;
   margin: 0;
   padding: 10px;
   display: flex;
@@ -45,13 +46,14 @@ export function MobileLinks(props) {
       <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       {isOpen && (
         <LinksWrapper>
+          <Access />
+          <hr />
           <LinkItem>
             <Link href="#">About Us</Link>
           </LinkItem>
           <LinkItem>
             <Link href="#">How it Works</Link>
           </LinkItem>
-          <Access />
         </LinksWrapper>
       )}
     </NavLinksContainer>

@@ -8,6 +8,21 @@ import { auth } from "@lib/firebase";
 
 const AccessContainer = styled.div`
   display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    img {
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
 `;
 
 const LoginButton = styled.button`
@@ -52,12 +67,11 @@ export function Access(props) {
             <button className="btn-blue">Write Posts</button>
           </Link>
 
-          <Link href={`/${username}`}>
-            <img
-              style={{ maxWidth: 50, maxHeight: 50 }}
-              src={user?.photoURL || "/hacker.png"}
-            />
-          </Link>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Link href={`/${username}`}>
+              <img src={user?.photoURL || "/hacker.png"} />
+            </Link>
+          </div>
         </>
       )}
 
