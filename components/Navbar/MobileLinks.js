@@ -49,10 +49,10 @@ export function MobileLinks(props) {
           <Access />
           <hr />
           <LinkItem>
-            <Link href="#">About Us</Link>
+            <Link href="/about">About Us</Link>
           </LinkItem>
           <LinkItem>
-            <Link href="#">How it Works</Link>
+            <Link href="/instruction">Instruction</Link>
           </LinkItem>
         </LinksWrapper>
       )}
