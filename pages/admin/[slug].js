@@ -1,16 +1,16 @@
-import styles from '@styles/Admin.module.css';
-import AuthCheck from '@components/AuthCheck';
-import { firestore, auth, serverTimestamp } from '@lib/firebase';
-import ImageUploader from '@components/ImageUploader';
+import styles from "@styles/Admin.module.css";
+import AuthCheck from "@components/AuthCheck";
+import { firestore, auth, serverTimestamp } from "@lib/firebase";
+import ImageUploader from "@components/ImageUploader";
 
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useState } from "react";
+import { useRouter } from "next/router";
 
-import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
-import { useForm } from 'react-hook-form';
-import ReactMarkdown from 'react-markdown';
-import Link from 'next/link';
-import toast from 'react-hot-toast';
+import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { useForm } from "react-hook-form";
+import ReactMarkdown from "react-markdown";
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function AdminPostEdit(props) {
   return (
@@ -26,7 +26,11 @@ function PostManager() {
   const router = useRouter();
   const { slug } = router.query;
 
-  const postRef = firestore.collection('users').doc(auth.currentUser.uid).collection('posts').doc(slug);
+  const postRef = firestore
+    .collection("users")
+    .doc(auth.currentUser.uid)
+    .collection("posts")
+    .doc(slug);
   const [post] = useDocumentDataOnce(postRef);
 
   return (
@@ -37,13 +41,19 @@ function PostManager() {
             <h1>{post.title}</h1>
             <p>ID: {post.slug}</p>
 
-            <PostForm postRef={postRef} defaultValues={post} preview={preview} />
+            <PostForm
+              postRef={postRef}
+              defaultValues={post}
+              preview={preview}
+            />
           </section>
 
           <aside>
             <h3>Tools</h3>
-            <button onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
-            <Link href={`/${post.username}/${post.slug}`}>
+            <button onClick={() => setPreview(!preview)}>
+              {preview ? "Edit" : "Preview"}
+            </button>
+            <Link href={`/${post.username}/${post.slug}`} passHref>
               <button className="btn-blue">Live view</button>
             </Link>
             <DeletePostButton postRef={postRef} />
@@ -55,7 +65,10 @@ function PostManager() {
 }
 
 function PostForm({ defaultValues, postRef, preview }) {
-  const { register, errors, handleSubmit, formState, reset, watch } = useForm({ defaultValues, mode: 'onChange' });
+  const { register, errors, handleSubmit, formState, reset, watch } = useForm({
+    defaultValues,
+    mode: "onChange",
+  });
 
   const { isValid, isDirty } = formState;
 
@@ -68,14 +81,14 @@ function PostForm({ defaultValues, postRef, preview }) {
 
     reset({ content, published });
 
-    toast.success('Post updated successfully!');
+    toast.success("Post updated successfully!");
   };
 
   return (
     <form onSubmit={handleSubmit(updatePost)}>
       {preview && (
         <div className="card">
-          <ReactMarkdown>{watch('content')}</ReactMarkdown>
+          <ReactMarkdown>{watch("content")}</ReactMarkdown>
         </div>
       )}
 
@@ -85,20 +98,31 @@ function PostForm({ defaultValues, postRef, preview }) {
         <textarea
           name="content"
           ref={register({
-            maxLength: { value: 20000, message: 'content is too long' },
-            minLength: { value: 10, message: 'content is too short' },
-            required: { value: true, message: 'content is required' },
+            maxLength: { value: 20000, message: "content is too long" },
+            minLength: { value: 10, message: "content is too short" },
+            required: { value: true, message: "content is required" },
           })}
         ></textarea>
 
-        {errors.content && <p className="text-danger">{errors.content.message}</p>}
+        {errors.content && (
+          <p className="text-danger">{errors.content.message}</p>
+        )}
 
         <fieldset>
-          <input className={styles.checkbox} name="published" type="checkbox" ref={register} />
+          <input
+            className={styles.checkbox}
+            name="published"
+            type="checkbox"
+            ref={register}
+          />
           <label>Published</label>
         </fieldset>
 
-        <button type="submit" className="btn-green" disabled={!isDirty || !isValid}>
+        <button
+          type="submit"
+          className="btn-green"
+          disabled={!isDirty || !isValid}
+        >
           Save Changes
         </button>
       </div>
@@ -110,11 +134,11 @@ function DeletePostButton({ postRef }) {
   const router = useRouter();
 
   const deletePost = async () => {
-    const doIt = confirm('are you sure!');
+    const doIt = confirm("are you sure!");
     if (doIt) {
       await postRef.delete();
-      router.push('/admin');
-      toast('post annihilated ', { icon: '🗑️' });
+      router.push("/admin");
+      toast("post annihilated ", { icon: "🗑️" });
     }
   };
 

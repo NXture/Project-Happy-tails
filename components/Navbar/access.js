@@ -63,13 +63,13 @@ export function Access(props) {
         <>
           <button onClick={signOut}>Sign Out</button>
 
-          <Link href="/admin">
+          <Link href="/admin" passHref>
             <button className="btn-blue">Write Posts</button>
           </Link>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Link href={`/${username}`}>
-              <img src={user?.photoURL || "/hacker.png"} />
+            <Link href={`/${username}`} passHref>
+              <img src={user?.photoURL || "/hacker.png"} alt="User Image" />
             </Link>
           </div>
         </>
@@ -77,7 +77,7 @@ export function Access(props) {
 
       {/* user is not signed OR has not created username */}
       {!username && (
-        <Link href="/enter">
+        <Link href="/enter" passHref>
           <LoginButton className="btn-blue">Login</LoginButton>
         </Link>
       )}

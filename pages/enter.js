@@ -1,6 +1,7 @@
 import { auth, firestore, googleAuthProvider } from "@lib/firebase";
 import { UserContext } from "@lib/context";
 import Metatags from "@components/Metatags";
+import Image from "next/image";
 
 import { useEffect, useState, useCallback, useContext } from "react";
 import debounce from "lodash.debounce";
@@ -36,7 +37,8 @@ function SignInButton() {
   return (
     <>
       <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={"/google.png"} width="30px" /> Sign in with Google
+        <Image src={"/google.png"} width={30} height={30} alt="Google Image" />{" "}
+        Sign in with Google
       </button>
       <button onClick={() => auth.signInAnonymously()}>
         Sign in Anonymously
@@ -104,7 +106,7 @@ function UsernameForm() {
 
   // Hit the database for username match after each debounced change
   // useCallback is required for debounce to work
-  const checkUsername = useCallback(
+  const checkUsername = useCallback(() => {
     debounce(async (username) => {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
@@ -113,9 +115,8 @@ function UsernameForm() {
         setIsValid(!exists);
         setLoading(false);
       }
-    }, 500),
-    []
-  );
+    }, 500);
+  }, []);
 
   return (
     !username && (

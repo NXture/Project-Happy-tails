@@ -30,7 +30,7 @@ const LogoText = styled.h2`
 export function Logo(props) {
   return (
     <div>
-      <Link href="/">
+      <Link href="/" passHref>
         <LogoWrapper>
           <LogoImg>
             <img src="/logo.svg" alt="logo" />
