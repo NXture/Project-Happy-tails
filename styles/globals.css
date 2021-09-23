@@ -18,6 +18,12 @@ body {
   margin-top: 50px;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
 main {
   padding: 1rem 10vw;
 }

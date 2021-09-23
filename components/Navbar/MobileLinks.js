@@ -17,20 +17,26 @@ const LinksWrapper = styled.ul`
   height: 100%;
   list-style: none;
   background-color: #fff;
-  width: 60%;
   flex-direction: column;
   position: fixed;
+  width: 60%;
   top: 61px;
   right: 0;
+
+  @media (min-width: 450px) and (max-width: 768px) {
+    width: 40%;
+  }
 `;
 
 const LinkItem = styled.li`
   width: 100%;
   padding: 0 1.1em;
   color: #222;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 20px;
   display: flex;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 `;
 
 const Link = styled.a`
@@ -47,13 +53,19 @@ export function MobileLinks(props) {
       {isOpen && (
         <LinksWrapper>
           <Access />
-          <hr />
-          <LinkItem>
-            <Link href="/about">About Us</Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="/instruction">Instruction</Link>
-          </LinkItem>
+          <hr style={{ width: "100%" }} />
+          <div
+            style={{
+              alignSelf: "center",
+            }}
+          >
+            <LinkItem>
+              <Link href="/about">About Us</Link>
+            </LinkItem>
+            <LinkItem>
+              <Link href="/instruction">Instruction</Link>
+            </LinkItem>
+          </div>
         </LinksWrapper>
       )}
     </NavLinksContainer>
