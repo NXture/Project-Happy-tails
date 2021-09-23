@@ -51,7 +51,8 @@ export function MobileLinks(props) {
     <NavLinksContainer>
       <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       {isOpen && (
-        <LinksWrapper>
+        <LinksWrapper onClick={() => setOpen(!isOpen)}
+        >
           <Access />
           <hr style={{ width: "100%" }} />
           <div
