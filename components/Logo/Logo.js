@@ -36,7 +36,14 @@ export function Logo(props) {
             <img src="/logo.svg" alt="logo" />
           </LogoImg>
           <LogoText>
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                fontWeight: "bold",
+                letterSpacing: "1px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <span>Pawesome</span>
               <span>Tales</span>
             </div>
