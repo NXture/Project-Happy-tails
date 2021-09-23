@@ -111,6 +111,9 @@ code {
 
 .btn,
 button {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
   background-color: var(--color-gray);
   border: none;
   color: var(--color-text);
@@ -120,8 +123,6 @@ button {
   text-align: center;
   justify-content: center;
   text-decoration: none;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: bold;
   border-radius: 0.25rem;
   cursor: pointer;
   margin: 0.5rem 1rem 0.5rem 0;

@@ -36,7 +36,9 @@ const LinkItem = styled.li`
   font-size: 20px;
   display: flex;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  margin: 1em 0em;
+  display: flex;
+  justify-content: center;
 `;
 
 const Link = styled.a`

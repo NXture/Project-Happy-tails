@@ -25,24 +25,66 @@ const AccessContainer = styled.div`
   }
 `;
 
-const LoginButton = styled.button`
-  border: 0;
-  outline: 0;
-  padding: 8px 1em;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 20px;
-  background-color: #6adf76;
-  background-image: linear-gradient(to right, transparent 0%, #00c9ff 100%);
-  transition: all 240ms ease-in-out;
-  cursor: pointer;
+const LoginButton = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+  height: auto;
 
-  &:hover {
-    background-color: #00c9ff;
+  div {
+    pointer-events: auto;
+    cursor: pointer;
+    background: #e7e7e7;
+    border: none;
+    padding: 1rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
   }
-  &:not(:last-of-type) {
-    margin-right: 7px;
+
+  div::before,
+  div::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  div {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: #fff;
+    background: #e7e7e7;
+  }
+
+  div span {
+    position: relative;
+    mix-blend-mode: difference;
+  }
+
+  div::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  }
+
+  div:hover::before {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  @media (max-width: 768px) {
+    height: 80px;
+    justify-content: center;
+    align-self: center;
   }
 `;
 
@@ -78,7 +120,11 @@ export function Access(props) {
       {/* user is not signed OR has not created username */}
       {!username && (
         <Link href="/enter" passHref>
-          <LoginButton className="btn-blue">Login</LoginButton>
+          <LoginButton>
+            <div>
+              <span>Login / Sign Up</span>
+            </div>
+          </LoginButton>
         </Link>
       )}
     </AccessContainer>
