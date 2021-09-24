@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Writer = styled.span`
   color: black;
-  background-color:#FF8A8A;
+  background-color: #ff8a8a;
   font-size: 14px;
   padding: 5px 6px 2px 6px;
   border-radius: 0.2rem;
@@ -24,23 +24,22 @@ function PostItem({ post, admin = false }) {
 
   return (
     <div className="card">
-      <Link href={`/${post.username}`} passHref>
-        <a>
-          <strong>
-            By <Writer>@{post.username}</Writer>
-          </strong>
-        </a>
-      </Link>
-
       <Link href={`/${post.username}/${post.slug}`} passHref>
         <h2>
           <a>{post.title}</a>
         </h2>
       </Link>
+      <Link href={`/${post.username}`} passHref>
+        <div style={{ marginBottom: 20 }}>
+          <strong>
+            By <Writer>@{post.username}</Writer>
+          </strong>
+        </div>
+      </Link>
 
       <footer>
         <span>
-          {wordCount} words. {minutesToRead} min read
+          {wordCount} words - {minutesToRead} min read
         </span>
         <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
       </footer>
