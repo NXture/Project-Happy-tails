@@ -22,6 +22,14 @@ const FooterWrapper = styled.div`
     margin-bottom: 0%;
     color: white;
   }
+  @media (max-width: 450px) {
+    div {
+      padding: 0% 4%;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -29,7 +37,7 @@ const Footer = () => {
     <FooterWrapper>
       <div>
         <h2>Pawesome Tales </h2>
-        <p>Designed with ❤ | powered by NextJS and Vecel</p>
+        <p>Designed with ❤ | powered by NextJS and Vercel</p>
       </div>
     </FooterWrapper>
   );

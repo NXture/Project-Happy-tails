@@ -65,7 +65,7 @@ function SignOutButton() {
           Welcome <span>{user.displayName}</span>.
         </h3>
         <p>You&apos;ve Successfully Signed In.👏</p>
-        <div>
+        <div style={{ display: "flex" }}>
           <Link href="/admin" passHref>
             <button className="btn-blue">Write Posts</button>
           </Link>
@@ -145,7 +145,8 @@ function UsernameForm() {
   return (
     !username && (
       <section>
-        <h3>Choose Username</h3>
+        <h3>You&apos;re almost there ! </h3>
+        <p>Please choose your username below.</p>
         <form onSubmit={onSubmit}>
           <input
             name="username"
@@ -187,3 +188,4 @@ function UsernameMessage({ username, isValid, loading }) {
     return <p></p>;
   }
 }
+
