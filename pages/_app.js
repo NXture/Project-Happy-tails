@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { Header } from "@components/Navbar/Header";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import * as ga from "../lib/ga";
 
@@ -28,6 +29,9 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
   return (
     <UserContext.Provider value={userData}>
+      <Head>
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
       <Header />
       <Component {...pageProps} />
       <Toaster />
