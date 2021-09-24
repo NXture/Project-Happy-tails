@@ -29,9 +29,12 @@ const LinkItem = styled.li`
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
-  font-size: inherit;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
+
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 export function NavLinks(props) {
