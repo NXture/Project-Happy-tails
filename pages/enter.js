@@ -1,11 +1,11 @@
 import { auth, firestore, googleAuthProvider } from "@lib/firebase";
 import { UserContext } from "@lib/context";
 import Metatags from "@components/Metatags";
-import Image from "next/image";
-import Link from "next/link";
-
 import { useEffect, useState, useCallback, useContext } from "react";
 import debounce from "lodash.debounce";
+
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
@@ -130,7 +130,7 @@ function UsernameForm() {
 
   // Hit the database for username match after each debounced change
   // useCallback is required for debounce to work
-  const checkUsername = useCallback(() => {
+  const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
@@ -139,8 +139,9 @@ function UsernameForm() {
         setIsValid(!exists);
         setLoading(false);
       }
-    }, 500);
-  }, []);
+    }, 500),
+    []
+  );
 
   return (
     !username && (
@@ -188,4 +189,3 @@ function UsernameMessage({ username, isValid, loading }) {
     return <p></p>;
   }
 }
-
