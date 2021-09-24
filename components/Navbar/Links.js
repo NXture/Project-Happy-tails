@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const NavLinksContainer = styled.div`
   height: 100%;
@@ -26,7 +27,7 @@ const LinkItem = styled.li`
   display: flex;
 `;
 
-const Link = styled.a`
+const Container = styled.div`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -37,19 +38,23 @@ const Link = styled.a`
   }
 `;
 
-export function NavLinks(props) {
+export function NavLinks() {
   return (
     <NavLinksContainer>
       <LinksWrapper>
         <LinkItem>
-          <Link href="/about">
-            <span>About Us</span>
-          </Link>
+          <Container>
+            <Link href="/about" passHref>
+              <span>About Us</span>
+            </Link>
+          </Container>
         </LinkItem>
         <LinkItem>
-          <Link href="/instruction">
-            <span>Instruction</span>
-          </Link>
+          <Container>
+            <Link href="/instruction" passHref>
+              <span>Instruction</span>
+            </Link>
+          </Container>
         </LinkItem>
       </LinksWrapper>
     </NavLinksContainer>
