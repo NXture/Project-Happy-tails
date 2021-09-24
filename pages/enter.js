@@ -59,12 +59,12 @@ function SignInButton() {
 function SignOutButton() {
   const { user } = useContext(UserContext);
   return (
-    <div>
+    <>
       <div style={{ marginBottom: "20rem" }}>
         <h3>
           Welcome <span>{user.displayName}</span>.
         </h3>
-        <p> You've Successfully Signed In.👏</p>
+        <p>You&apos;ve Successfully Signed In.👏</p>
         <div>
           <Link href="/admin" passHref>
             <button className="btn-blue">Write Posts</button>
@@ -72,7 +72,7 @@ function SignOutButton() {
           <button onClick={() => auth.signOut()}>Sign Out</button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
