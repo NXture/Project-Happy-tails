@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Metatags from "@components/Metatags";
 
 const Instruction = () => {
   return (
     <main>
+      <Metatags title="Instructions" description="How this site works?" />
       <div>
         <h1>Join Us ✍</h1>
         <h3>We live for stories and ideas that celebrate pets.</h3>{" "}
@@ -12,7 +14,7 @@ const Instruction = () => {
             <li>Do you have a question about your dog or cat?</li>
             <li>Have an idea for an article?</li>
             <li>Got a hot news tip?</li>
-            <li> Or just want us to coo over pictures of your pets?</li>
+            <li>Or just want us to coo over pictures of your pets?</li>
           </ul>
           Hit us up! or{" "}
           <span

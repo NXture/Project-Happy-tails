@@ -58,7 +58,7 @@ export default function Home(props) {
   return (
     <main>
       <Metatags
-        title="Home Page"
+        title="Pawesome Tales | Home"
         description="Get the latest posts on our site"
       />
 

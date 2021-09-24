@@ -2,6 +2,7 @@ import { auth, firestore, googleAuthProvider } from "@lib/firebase";
 import { UserContext } from "@lib/context";
 import Metatags from "@components/Metatags";
 import Image from "next/image";
+import Link from "next/link";
 
 import { useEffect, useState, useCallback, useContext } from "react";
 import debounce from "lodash.debounce";
@@ -36,20 +37,43 @@ function SignInButton() {
 
   return (
     <>
-      <button className="btn-google" onClick={signInWithGoogle}>
-        <Image src={"/google.png"} width={30} height={30} alt="Google Image" />{" "}
-        Sign in with Google
-      </button>
-      <button onClick={() => auth.signInAnonymously()}>
-        Sign in Anonymously
-      </button>
+      <div style={{ marginBottom: "20rem" }}>
+        <h3>Hi There ! 👋 </h3>
+        <p>You must be signed in to Write, Edit or to Heart an article. </p>
+        <p>Please use your google account to sign in by clicking below. 👇 </p>
+        <button className="btn-google" onClick={signInWithGoogle}>
+          <Image
+            src={"/google.png"}
+            width={30}
+            height={30}
+            alt="Google Image"
+          />{" "}
+          Sign in with Google
+        </button>
+      </div>
     </>
   );
 }
 
 // Sign out button
 function SignOutButton() {
-  return <button onClick={() => auth.signOut()}>Sign Out</button>;
+  const { user } = useContext(UserContext);
+  return (
+    <div>
+      <div style={{ marginBottom: "20rem" }}>
+        <h3>
+          Welcome <span>{user.displayName}</span>.
+        </h3>
+        <p> You've Successfully Signed In.👏</p>
+        <div>
+          <Link href="/admin" passHref>
+            <button className="btn-blue">Write Posts</button>
+          </Link>
+          <button onClick={() => auth.signOut()}>Sign Out</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // Username form

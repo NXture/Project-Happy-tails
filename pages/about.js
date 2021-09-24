@@ -1,8 +1,16 @@
 import Link from "next/link";
+import Metatags from "@components/Metatags";
 
 const About = () => {
   return (
     <main>
+      <Metatags
+        title="About Us"
+        description="Pawesome Tales is a content sharing and social blogging platform for
+      all pet lovers, where visitor can write and share about their pawesome
+      journey with their pets. And can also read interesting
+      tales written by other."
+      />
       <div>
         <h1>About Us 😁</h1>
         <h3>
@@ -11,14 +19,13 @@ const About = () => {
         </h3>
         <p>
           Pawesome Tales is a content sharing and social blogging platform for
-          all pet lovers, where visitor can write and share their pawesome
-          journey with their pets with others. And can also read interesting
-          tales written by other.{" "}
+          all pet lovers, where visitor can write and share about their pawesome
+          journey with their pets. And can also read interesting tales written
+          by other.{" "}
         </p>
         <p>
-          Whether you’re looking for adoption guides, in-fur-mation on your
-          pet’s weird habits or showcases of pure pet cuteness, we’ve
-          paw-sitively got it all.
+          Whether you’re looking for in-fur-mation on your pet’s weird habits or
+          showcases of pure pet cuteness, we’ve paw-sitively got it all.
         </p>
         <hr />
         <h3>Our Viewpoint</h3>
@@ -26,10 +33,10 @@ const About = () => {
           For the pet lovers out there, the special bond between you and your
           furry friend is something that only someone who owns a pet can truly
           understand. Happily, the surge of social networking sites has created
-          a wave of petworking sites, on which fellow pet owners can connect.
-          The pet-dominated social networking trend is in fact so popular that
-          one in ten of all pets have their own Facebook page, Twitter account
-          or YouTube channel. 💬
+          a wave of petworking sites like ours, on which fellow pet owners can
+          connect. The pet-dominated social networking trend is in fact so
+          popular that one in ten of all pets have their own Facebook page,
+          Twitter account or YouTube channel. 💬
         </p>
         <p>
           So connet with other fellow pet lovers through our platform that will

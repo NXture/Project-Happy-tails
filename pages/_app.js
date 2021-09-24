@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import * as ga from "../lib/ga";
+import Footer from "@components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const userData = useUserData();
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
       <Toaster />
     </UserContext.Provider>
   );

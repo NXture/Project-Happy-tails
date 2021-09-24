@@ -1,4 +1,13 @@
 import Link from "next/link";
+import styled from "styled-components";
+
+const Writer = styled.span`
+  color: black;
+  background-color:#FF8A8A;
+  font-size: 14px;
+  padding: 5px 6px 2px 6px;
+  border-radius: 0.2rem;
+`;
 
 export default function PostFeed({ posts, admin }) {
   return posts
@@ -17,7 +26,9 @@ function PostItem({ post, admin = false }) {
     <div className="card">
       <Link href={`/${post.username}`} passHref>
         <a>
-          <strong>By @{post.username}</strong>
+          <strong>
+            By <Writer>@{post.username}</Writer>
+          </strong>
         </a>
       </Link>
 
