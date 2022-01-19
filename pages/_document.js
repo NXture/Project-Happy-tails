@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          
           <link rel="manifest" href="/app.webmanifest" />
           <meta name="theme-color" content="#df3b3b" />
           <link rel="apple-touch-icon" href="/icon_500.png" />
