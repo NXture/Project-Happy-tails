@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <link rel="manifest" href="/app.webmanifest" />
         </Head>
         <body>
           <Main />
