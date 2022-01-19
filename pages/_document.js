@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
             }}
           />
           <link rel="manifest" href="/app.webmanifest" />
+          <meta name="theme-color" content="#df3b3b"/>
         </Head>
         <body>
           <Main />
